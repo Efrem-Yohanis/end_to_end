@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class CustomUser(AbstractUser):
+class CustomUser(models.Model):
     ROLES = (
         ('user', 'User'),
         ('Administrator', 'Administrator'),
@@ -17,20 +17,7 @@ class CustomUser(AbstractUser):
     role = models.CharField(max_length=30, choices=ROLES,null=True)
     date_of_birth = models.DateField()
     
-    user_permissions = models.ManyToManyField(
-        'auth.Permission',
-        verbose_name='user permissions',
-        blank=True,
-        related_name='customuser_set',
-        related_query_name='customuser'
-    )
-    groups = models.ManyToManyField(
-        'auth.Group',
-        verbose_name='groups',
-        blank=True,
-        related_name='customuser_set',
-        related_query_name='customuser'
-    )
+    
 
     def __str__(self):
         return self.username
