@@ -17,7 +17,5 @@ class CustomUser(models.Model):
     role = models.CharField(max_length=30, choices=ROLES,null=True)
     date_of_birth = models.DateField()
     
-    
-
     def __str__(self):
         return self.username

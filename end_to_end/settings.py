@@ -68,7 +68,6 @@ WSGI_APPLICATION = 'end_to_end.wsgi.application'
 # }
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -80,14 +79,8 @@ DATABASES = {
     }
 }
 database_url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a/ohrmsdb"
-
 parsed_db = dj_database_url.parse(database_url)
-
 DATABASES['default'].update(parsed_db)
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
